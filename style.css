@@ -1217,40 +1217,39 @@ transition:.6s;
     border-radius: 5px;
 }
 
-
-
 .hero-image {
     width: 100%;
-    height: 100vh; /* This makes it fill the screen like your video did */
+    height: 100vh;
     object-fit: cover;
 }
 
-
-
-/* Fixes the text layout on mobile screens */
 @media (max-width: 768px) {
     .hero {
-        display: flex;
-        flex-direction: column; /* Stacks the image on top and text below if screen is too small */
-        height: auto;
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        align-items: center !important;
     }
 
     .hero-image {
-        width: 100%;
-        height: 40vh; /* Takes up less height so text has room below */
-        object-fit: cover;
+        width: 35% !important; /* Makes image smaller on the left */
+        height: 100vh !important;
+        object-fit: cover !important;
     }
 
     .hero-content {
-        width: 100%;
-        padding: 30px 20px;
-        text-align: center; /* Centers the text so it's perfectly readable */
+        width: 65% !important; /* Gives text more room on the right */
+        padding: 10px !important;
+        text-align: left !important;
     }
 
     .hero-content h1 {
-        font-size: 2rem; /* Shrinks the large title slightly so it fits the screen */
-        line-height: 1.2;
+        font-size: 1.3rem !important; /* Fits the text perfectly without cutoff */
+        word-wrap: break-word !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-content p {
+        font-size: 0.85rem !important;
     }
 }
-
-
