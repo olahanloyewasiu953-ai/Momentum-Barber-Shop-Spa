@@ -1223,36 +1223,57 @@ transition:.6s;
     object-fit: cover;
 }
 
+
 @media (max-width: 768px) {
+    /* 1. Force the side-by-side container alignment */
     section.hero, 
-    .hero {
+    .hero,
+    #hero {
         display: flex !important;
-        flex-direction: column !important; /* Stacks vertically so text has full width */
+        flex-direction: row !important;
         width: 100% !important;
         min-height: 100vh !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
     }
 
-    .hero-image {
-        width: 100% !important;
-        height: 50vh !important; /* Image takes up the top half */
+    /* 2. Ruthlessly shrink the image container and any raw img tags inside it */
+    .hero-image,
+    .hero-img,
+    .hero img,
+    section.hero img {
+        width: 25% !important; /* Force it down to a quarter of the screen */
+        max-width: 25% !important;
+        height: 100vh !important;
         object-fit: cover !important;
+        flex: 0 0 25% !important;
     }
 
-    .hero-content {
-        width: 100% !important; /* Text gets the full width on the bottom half */
-        padding: 30px 20px !important;
+    /* 3. Give the text container the remaining 75% of the screen */
+    .hero-content,
+    .hero-text {
+        width: 75% !important;
+        max-width: 75% !important;
+        flex: 0 0 75% !important;
+        padding: 10px 15px !important;
         box-sizing: border-box !important;
-        text-align: center !important; /* Centers everything cleanly */
+        text-align: left !important;
     }
 
-    .hero-content h1 {
-        font-size: 2rem !important; /* Big, premium header without breaking words */
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
+    /* 4. Shrink the fonts drastically so they physically cannot overflow */
+    .hero-content h1,
+    .hero-text h1,
+    .hero h1 {
+        font-size: 1.1rem !important; 
+        line-height: 1.2 !important;
+        word-break: keep-all !important;
+        white-space: normal !important;
     }
 
-    .hero-content p {
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
+    .hero-content p,
+    .hero-text p,
+    .hero p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
     }
 }
