@@ -1227,5 +1227,30 @@ transition:.6s;
 
 
 
+/* Fixes the text layout on mobile screens */
+@media (max-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: column; /* Stacks the image on top and text below if screen is too small */
+        height: auto;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 40vh; /* Takes up less height so text has room below */
+        object-fit: cover;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center; /* Centers the text so it's perfectly readable */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Shrinks the large title slightly so it fits the screen */
+        line-height: 1.2;
+    }
+}
 
 
