@@ -1224,71 +1224,37 @@ transition:.6s;
 }
 
 @media (max-width: 768px) {
+    section.hero, 
     .hero {
         display: flex !important;
-        flex-direction: row !important;
+        flex-direction: row !important; /* Forces layout to be side-by-side */
         width: 100% !important;
+        min-height: 100vh !important;
         align-items: center !important;
     }
 
     .hero-image {
-        width: 35% !important; /* Makes image smaller on the left */
-        height: 100vh !important;
-        object-fit: cover !important;
-    }
-
-    .hero-content {
-        width: 65% !important; /* Gives text more room on the right */
-        padding: 10px !important;
-        text-align: left !important;
-    }
-
-    .hero-content h1 {
-        font-size: 1.3rem !important; /* Fits the text perfectly without cutoff */
-        word-wrap: break-word !important;
-        line-height: 1.2 !important;
-    }
-    
-    .hero-content p {
-        font-size: 0.85rem !important;
-    }
-}
-
-/* Ultimate fix to force side-by-side spacing on mobile */
-@media (max-width: 768px) {
-    section.hero, 
-    div.hero, 
-    #hero {
-        display: flex !important;
-        flex-direction: row !important;
-        width: 100% !important;
-        min-height: 100vh !important;
-        align-items: center !important;
-        box-sizing: border-box !important;
-    }
-
-    section.hero img, 
-    .hero-image,
-    .hero img {
-        width: 35% !important; /* Forces the image to take less space */
+        width: 35% !important; /* Shrinks the image beautifully on the left */
         height: 100vh !important;
         object-fit: cover !important;
         flex-shrink: 0 !important;
     }
 
-    .hero-content,
-    .hero div.hero-content {
-        width: 65% !important; /* Forces the text area to take up the rest of the screen */
+    .hero-content {
+        width: 65% !important; /* Gives text plenty of displaying room on the right */
         padding: 15px !important;
         box-sizing: border-box !important;
         text-align: left !important;
         flex-grow: 1 !important;
     }
 
-    .hero-content h1, 
-    .hero-content h2 {
-        font-size: 1.4rem !important; /* Scales down the title so it fits cleanly */
+    .hero-content h1 {
+        font-size: 1.3rem !important; /* Scales title down so words don't break awkwardly */
         line-height: 1.2 !important;
         white-space: normal !important;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem !important;
     }
 }
