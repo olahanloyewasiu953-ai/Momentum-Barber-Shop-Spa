@@ -1220,60 +1220,48 @@ transition:.6s;
 .hero-image {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    object-fit: ;}
 }
-
-
 @media (max-width: 768px) {
-    /* 1. Force the side-by-side container alignment */
-    section.hero, 
     .hero,
+    section.hero,
     #hero {
-        display: flex !important;
-        flex-direction: row !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero-image {
         width: 100% !important;
-        min-height: 100vh !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
+        max-width: 100% !important;
+        height: 300px !important;
+        object-fit: cover;
     }
 
-    /* 2. Ruthlessly shrink the image container and any raw img tags inside it */
-    .hero-image,
-    .hero-img,
-    .hero img,
-    section.hero img {
-        width: 25% !important; /* Force it down to a quarter of the screen */
-        max-width: 25% !important;
-        height: 100vh !important;
-        object-fit: cover !important;
-        flex: 0 0 25% !important;
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    /* 3. Give the text container the remaining 75% of the screen */
-    .hero-content,
-    .hero-text {
-        width: 75% !important;
-        max-width: 75% !important;
-        flex: 0 0 75% !important;
-        padding: 10px 15px !important;
-        box-sizing: border-box !important;
-        text-align: left !important;
+    .hero-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
     }
 
-    /* 4. Shrink the fonts drastically so they physically cannot overflow */
-    .hero-content h1,
-    .hero-text h1,
-    .hero h1 {
-        font-size: 1.1rem !important; 
-        line-height: 1.2 !important;
-        word-break: keep-all !important;
-        white-space: normal !important;
+    .hero-content p {
+        font-size: 1rem !important;
     }
 
-    .hero-content p,
-    .hero-text p,
-    .hero p {
-        font-size: 0.8rem !important;
-        line-height: 1.4 !important;
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }
