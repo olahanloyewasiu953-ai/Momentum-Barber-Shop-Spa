@@ -1216,11 +1216,15 @@ transition:.6s;
     text-decoration: none;
     border-radius: 5px;
 }
-
 .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    object-fit: ;}
+    height: 100%;
+    object-fit: cover;
+}
+
 }
 @media (max-width: 768px) {
     .hero,
