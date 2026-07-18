@@ -952,242 +952,14 @@ width:100%;
 
 }
 
-
-/*==================================
-CONTACT SECTION
-==================================*/
-
-.contact{
-background:linear-gradient(180deg,#0b0b0b,#161616);
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.contact-card{
-background:#181818;
-padding:35px 25px;
-border-radius:20px;
-text-align:center;
-transition:.4s;
-border:1px solid rgba(212,175,55,.15);
-}
-
-.contact-card:hover{
-transform:translateY(-10px);
-border-color:#d4af37;
-box-shadow:0 20px 40px rgba(212,175,55,.18);
-}
-
-.contact-card i{
-font-size:45px;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.contact-card h3{
-margin-bottom:15px;
-font-size:24px;
-font-family:'Cinzel',serif;
-}
-
-.contact-card p{
-color:#ddd;
-line-height:1.8;
-}
-
-/*==================================
-GOOGLE MAP
-==================================*/
-
-.map iframe{
-width:100%;
-height:500px;
-border:none;
-display:block;
-filter:grayscale(20%);
-}
-
-/*==================================
-FOOTER
-==================================*/
-
-footer{
-background:#050505;
-padding:70px 20px 30px;
-text-align:center;
-border-top:1px solid rgba(212,175,55,.15);
-}
-
-footer h2{
-font-family:'Cinzel',serif;
-color:#d4af37;
-margin-bottom:20px;
-font-size:36px;
-}
-
-footer p{
-color:#bbb;
-margin-bottom:25px;
-}
-
-.footer-social{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-bottom:30px;
-}
-
-.footer-social a{
-width:55px;
-height:55px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-background:#181818;
-color:#d4af37;
-font-size:22px;
-text-decoration:none;
-transition:.4s;
-}
-
-.footer-social a:hover{
-background:#d4af37;
-color:#111;
-transform:translateY(-8px);
-}
-
-footer .copyright{
-margin-top:20px;
-font-size:15px;
-color:#888;
-}
-
-/*==================================
-SCROLL TO TOP
-==================================*/
-
-#topBtn{
-transition:.4s;
-}
-
-#topBtn:hover{
-background:#fff;
-}
-
-/*==================================
-WHATSAPP FLOAT
-==================================*/
-
-.whatsapp-float:hover{
-transform:scale(1.12);
-}
-
-/*==================================
-MOBILE MENU
-==================================*/
-
-@media(max-width:900px){
-
-.menu-btn{
-display:block;
-color:#fff;
-}
-
-.nav-links{
-position:absolute;
-top:100%;
-left:-100%;
-width:100%;
-background:#111;
-flex-direction:column;
-padding:30px;
-text-align:center;
-transition:.4s;
-gap:20px;
-}
-
-.nav-links.active{
-left:0;
-}
-
-.logo span{
-font-size:18px;
-}
-
-.hero-content h1{
-font-size:45px;
-}
-
-.hero-content p{
-font-size:17px;
-}
-
-.section-title h2{
-font-size:34px;
-}
-
-}
-
-/*==================================
-SMALL MOBILE
-==================================*/
-
-@media(max-width:600px){
-
-.hero-content h1{
-font-size:36px;
-}
-
-.hero-content h3{
-font-size:17px;
-letter-spacing:2px;
-}
-
-.btn{
-padding:14px 28px;
-font-size:15px;
-}
-
-.section-title h2{
-font-size:28px;
-}
-
-.logo{
-font-size:18px;
-}
-
-.whatsapp-float{
-width:58px;
-height:58px;
-font-size:28px;
-}
-
-#topBtn{
-width:50px;
-height:50px;
-}
-
-.map iframe{
-height:350px;
-}
-
-}
-
 /*==================================
 HIDE LOADER
 ==================================*/
-
 body.loaded #loader{
-opacity:0;
-visibility:hidden;
-transition:.6s;
+    opacity:0;
+    visibility:hidden;
+    transition:.6s;
 }
-
 
 .service-card {
     transition: transform 0.3s ease;
@@ -1216,6 +988,8 @@ transition:.6s;
     text-decoration: none;
     border-radius: 5px;
 }
+
+/* Base Desktop Settings for Hero Image */
 .hero-image {
     position: absolute;
     top: 0;
@@ -1225,47 +999,45 @@ transition:.6s;
     object-fit: cover;
 }
 
-}
+/* Unified Mobile Settings */
 @media (max-width: 768px) {
-    .hero,
-    section.hero,
-    #hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: auto;
-        padding: 40px 20px;
+    section.hero, 
+    .hero {
+        display: flex !important;
+        flex-direction: row !important; /* Side by side split layout */
+        width: 100% !important;
+        min-height: 100vh !important;
+        align-items: center !important;
     }
 
     .hero-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 300px !important;
-        object-fit: cover;
+        position: relative !important;
+        width: 25% !important; /* Explicitly limits width to 25% */
+        max-width: 25% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        flex: 0 0 25% !important;
     }
 
     .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px;
-        text-align: center;
-        box-sizing: border-box;
+        width: 75% !important; /* Rest goes entirely to your text */
+        max-width: 75% !important;
+        flex: 0 0 75% !important;
+        padding: 10px 15px !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
     }
 
     .hero-content h1 {
-        font-size: 2rem !important;
-        line-height: 1.2;
+        font-size: 1.1rem !important; /* Perfectly fits text column safely */
+        line-height: 1.2 !important;
+        word-break: keep-all !important;
+        white-space: normal !important;
     }
 
     .hero-content p {
-        font-size: 1rem !important;
-    }
-
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
     }
 }
+
